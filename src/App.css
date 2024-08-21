@@ -1,38 +1,159 @@
-.App {
+/* General */
+html, body {
+  height: 100%; /* Asegura que el html y body ocupen el 100% de la altura del viewport */
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+}
+
+/* Contenedor Principal para Centrarse y Mantener Footer en la Parte Inferior */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Permite que el contenedor principal ocupe el espacio disponible entre el encabezado y el pie de página */
+  align-items: center; /* Centra horizontalmente el contenido */
+  padding: 20px; /* Espaciado interno */
+  background-color: #fff; /* Fondo blanco para visibilidad */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra horizontalmente el contenedor en la página */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+.navbar .logo {
+  font-size: 1.8em;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .nav-links li {
+  margin: 0 15px;
+}
+
+.navbar .nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #e93e7c; /* Color similar a Glitzy */
+}
+
+/* Hero Section */
+.hero {
+  background: url('minion.jpeg') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.hero p {
+  font-size: 1.2em;
+}
+
+/* Product Cards */
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card .product-info {
+  padding: 15px;
+}
+
+.product-card h2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.product-card p {
+  color: #e93e7c; /* Color similar a Glitzy */
+  font-weight: bold;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2px 10;
+  width: 100%;
+  bottom:0;
+  position: fixed;
+  margin-top: auto; /* Asegura que el pie de página se mantenga en la parte inferior */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    flex-direction: column;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .navbar .nav-links li {
+    margin: 10px 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1em;
   }
 }
